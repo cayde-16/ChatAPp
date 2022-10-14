@@ -27,7 +27,8 @@ const TeamChannelPreview = ({channel, type}) => {
 
 
 
-        const members = Object.values(channel.state.members).filter(({ user }) => user.id != client.userID);
+        const members = Object.values(channel.state.members).filter(({ user }) => user.id != client.userID); //Grabs all the values from the members object then filters only the users & checks if your user.id does not equal the client.userID, 
+        // if they don't match then the client.userID will be displayed as preview
 
         return(
             <div className='channel-preview__item single'>
