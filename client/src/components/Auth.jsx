@@ -9,8 +9,10 @@ import purpleCrest from '../assets/purple_crest.jpg'
 import treeSchool from '../assets/Pngtreeschool.png'
 
 
+const cookies = new Cookies();
+
 const initalState = {
-    fullname: '',
+    fullName: '',
     username: '',
     password: '',
     confirmPassword: '',
@@ -20,7 +22,7 @@ const initalState = {
 
 const Auth = () => {
     const [form, setForm] = useState(initalState)
-    const [isSignup, setisSignup] = useState(false)
+    const [isSignup, setisSignup] = useState(true)
     
 
     const handleChange = (event) => {
@@ -32,10 +34,31 @@ const Auth = () => {
         setisSignup((prev) => !prev) // this line changes state depending on previous state
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-
         console.log(form)
+
+        const {fullName, username, password, phonenumber, avatarURL} = form;
+
+        const URL = 'http://localhost:5000/auth';
+
+        const { data: { token, userID, hashedPassword } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
+            username, password, fullName, phonenumber, avatarURL,
+        } )
+
+        cookies.set('token', token);
+        cookies.set('username', username);
+        cookies.set('fullName', fullName);
+        cookies.set('userID', userID);
+
+        if(isSignup){
+            cookies.set('phoneNumber', phonenumber);
+            cookies.set('avatarURL', avatarURL);
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        window.location.reload();
+
     }
     
     return(
@@ -48,12 +71,12 @@ const Auth = () => {
                         <form onSubmit={handleSubmit} action="">
                             {isSignup && (
                                 <div className='auth__form-container_fields-content_input'>
-                                    <label htmlFor="fullname">
+                                    <label htmlFor="fullName">
                                             Full Name
                                     </label>
 
                                     <input 
-                                        name="fullname"
+                                        name="fullName"
                                         type="text" 
                                         placeholder='Full Name'
                                         onChange={handleChange}
