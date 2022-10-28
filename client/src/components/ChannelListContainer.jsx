@@ -30,7 +30,7 @@ const CompanyHeader = () => (
     </div>
 )
     
-const ChannelListContainer = () => {
+const ChannelListContainer = ({ isCreating, setisCreating, setCreateType, setIsEditing }) => {
     const logout = () => {
         cookies.remove('token');
         cookies.remove('userID');
@@ -58,6 +58,10 @@ const ChannelListContainer = () => {
                         <TeamChannelList
                             {...listProps} //grabbing all list props and putting them here...This also get all custom components that the channel list would usally get
                             type='team'
+                            isCreating={isCreating} 
+                            setisCreating={setisCreating}
+                            setCreateType={setCreateType}
+                            setIsEditing={setIsEditing}
                         />
                     )}
                     Preview={(previewProps) => (
@@ -75,6 +79,10 @@ const ChannelListContainer = () => {
                         <TeamChannelList
                             {...listProps} 
                             type='messaging'
+                            isCreating={isCreating} 
+                            setisCreating={setisCreating}
+                            setCreateType={setCreateType}
+                            setIsEditing={setIsEditing}
                         />
                     )}
                     Preview={(previewProps) => (
