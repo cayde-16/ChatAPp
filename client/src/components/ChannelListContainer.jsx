@@ -64,7 +64,7 @@ const ChannelListContent = ({ isCreating, setisCreating, setCreateType, setIsEdi
            <SideBar logout={logout}/>
            <div className='channel-list__list__wrapper'>
                 <CompanyHeader/>
-                <ChannelSearch/>
+                <ChannelSearch setToggleContainer={setToggleContainer}/>
                 <ChannelList  //streamChat allows you to use ChannelList component right out of the box, but we still want to create our own custom channel list
                     filters={filters} // This is an object that allows me to filter some messages
                     channelRenderFilterFn={CustomChannelTeamFilters}  // 

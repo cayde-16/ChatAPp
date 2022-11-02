@@ -41,6 +41,8 @@ const UserItem = ({ user, setSelectedUsers }) => {
         </div>
     )
 }
+
+
 const Userlist = ({ setSelectedUsers }) => {
     const { client } = useChatContext()
     const [ users, setUsers] = useState([])
