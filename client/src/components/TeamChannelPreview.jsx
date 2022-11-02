@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, useChatContext } from 'stream-chat-react';
 
-const TeamChannelPreview = ({channel, type}) => {
+const TeamChannelPreview = ({setActiveChannel, setisCreating, setIsEditing, setToggleContainer, channel, type}) => {
     const {channel : activeChannel, client } = useChatContext()
 
     const ChannelPreview = () => (
@@ -30,14 +30,15 @@ const TeamChannelPreview = ({channel, type}) => {
         const members = Object.values(channel.state.members).filter(({ user }) => user.id != client.userID); //Grabs all the values from the members object then filters only the users & checks if your user.id does not equal the client.userID, 
         // if they don't match then the client.userID will be displayed as preview
 
+        console.log(members[0])
         return(
             <div className='channel-preview__item single'>
                 <Avatar
                     image={members[0]?.user?.image}
-                    name={members[0]?.user?.name?.fullName}
+                    name={members[0]?.user?.name || members[0]?.user?.name}
                     size={24}
                 />
-                <p>{members[0]?.user?.name?.fullName}</p>
+                <p>{members[0]?.user?.name || members[0]?.user?.name}</p>
             </div>
         )
     }
@@ -49,7 +50,13 @@ const TeamChannelPreview = ({channel, type}) => {
                 : 'channel-preview__wrapper'
         }
             onClick={() => {
-                console.log(channel)
+                setisCreating(false);
+                setIsEditing(false);
+                setActiveChannel(channel)
+
+                if(setToggleContainer) {
+                    setToggleContainer((prevState) => !prevState)
+                }
             }}
         >
             {type == 'team' ? <ChannelPreview/> : <DirectPreview/> }

@@ -601,7 +601,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 62px;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 0px var(--primary-colors);
   padding-right: 20px;
 }
 
@@ -760,7 +760,7 @@ body {
 .user-item__invite-empty {
   height: 28px;
   width: 28px;
-  background: #f7f6f8;
+  background: #d7d5d8;
   border: 1px solid #dedddf;
   border-radius: 14px;
   box-sizing: border-box;
