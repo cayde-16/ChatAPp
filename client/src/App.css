@@ -418,6 +418,7 @@ body {
   font-family: Helvetica Neue, sans-serif;
   height: 100%;
   display: flex;
+  object-fit: cover;
   align-items: center;
   justify-content: center;
   cursor: pointer;

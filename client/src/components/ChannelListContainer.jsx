@@ -4,17 +4,18 @@ import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
+import Citadel from '../assets/CitadelM.png'
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './'
 
 const cookies = new Cookies()
 
 const SideBar = ({ logout }) => (
     <div className='channel-list__sidebar'>
-        <div className='channel-list__sidebar__icon1'>
+        {/* <div className='channel-list__sidebar__icon1'>
             <div className='icon1__inner'>
-                <img src={HospitalIcon} alt="HospitalIcon" width="30"/>
+                <img src={Citadel} alt="HospitalIcon" width="30"/>
             </div>
-        </div>
+        </div> */}
 
         <div className='channel-list__sidebar__icon1'>
             <div className='icon1__inner'>
@@ -133,16 +134,15 @@ const ChannelListContainer = ({ setCreateType, setIsEditing, setisCreating}) => 
             </div>
 
             <div className='channel-list__container-responsive' style={{left: toggleContainer ? "0%": "-89%", backgroundColor: "var(--primary-colors)"}}>
-                <div className='channel-list__container-toggle' onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>
-                    
+                <div className='channel-list__container-toggle' onClick={() => setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>                  
                 </div>
                 <ChannelListContent
-                        setisCreating={setisCreating}
-                        setCreateType={setCreateType}
-                        setIsEditing={setIsEditing}
-                        setToggleContainer={setToggleContainer}
-                    />
-            </div>
+                    setisCreating={setisCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
+                    setToggleContainer={setToggleContainer}
+                /> 
+            </div> 
 
            
 

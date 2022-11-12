@@ -36,7 +36,7 @@ const Auth = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(form)
+        // console.log(form)
 
         const {username, password, phonenumber, avatarURL} = form;
 
