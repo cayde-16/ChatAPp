@@ -36,12 +36,11 @@ const Auth = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // console.log(form)
 
         const {username, password, phonenumber, avatarURL} = form;
 
-        const URL = 'http://localhost:5000/auth';
-
+        const URL = 'http://citadel-messanger.herokuapp.com/auth';
+ 
         const { data: { token, userID, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
             username, password, fullName: form.fullName, phonenumber, avatarURL,
         } )
