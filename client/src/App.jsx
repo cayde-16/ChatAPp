@@ -8,7 +8,7 @@ import './App.css';
 import './CustomMessage.scss'
 
 
-const apiKey = 'xuxc47sfm3pe';
+const apiKey = 'vu9hrarvhps4';
 
 
 const client = StreamChat.getInstance(apiKey)
