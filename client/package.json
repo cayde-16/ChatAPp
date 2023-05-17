@@ -13,8 +13,7 @@
     "stream-chat": "^7.2.0",
     "stream-chat-react": "^10.3.0",
     "universal-cookie": "^4.0.4",
-    "web-vitals": "^2.1.4",
-    "concurrently":"^8.0.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
