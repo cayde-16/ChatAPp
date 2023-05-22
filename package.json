@@ -3,6 +3,6 @@
     "scripts": {
         "start:server": "cd server && npm start",
         "start:client": "cd client && npm start",
-        "start": "railway run start:both"
+        "start": "cd server && npm start & cd client && npm start"
       }
 }
