@@ -41,7 +41,7 @@ const Auth = () => {
 
         // const URL = 'https://citadel-messanger.herokuapp.com/auth';
 
-        const URL = 'http://localhost:5000/auth';
+        const URL = 'https://citadelmessenger.onrender.com/auth';
  
         const { data: { token, userID, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
             username, password, fullName: form.fullName, phonenumber, avatarURL,
