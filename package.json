@@ -1,1 +1,5 @@
-{"dependencies":{"axios":"^1.1.2","concurrently":"^8.0.1","react-scripts":"^5.0.1"},"scripts":{"start:server":"cd server && npm start","start:client":"cd client && npm start","start":"cd server && npm start & cd client && npm start"}}
+{"dependencies":
+    {"axios":"^1.1.2","concurrently":"^8.0.1","react-scripts":"^5.0.1"},
+    "scripts":{ 
+        "start": "concurrently \"cd server && npm start\" \"cd src && npm start\""}
+}
