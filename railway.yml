@@ -1,5 +1,8 @@
 commands:
-  build:
-    - npm install
-    - npm install -g concurrently
-    - concurrently "cd server && npm start" "cd client && npm start"
+  start:
+    - name: Start Server
+      command: cd server && npm start
+    - name: Start Client
+      command: cd client && npm start
+    - name: Start Both
+      command: railway run start:server && railway run start:client
