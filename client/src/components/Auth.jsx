@@ -40,8 +40,9 @@ const Auth = () => {
         const {username, password, phonenumber, avatarURL} = form;
 
         // const URL = 'https://citadel-messanger.herokuapp.com/auth';
-
-        const URL = 'https://citadelmessenger.onrender.com/auth';
+        const  URL = 'https://lime-wide-eyed-antelope.cyclic.app/auth';
+        // const URL = 'https://citadelmessenger.onrender.com/auth';
+        // const URL = 'http://lime-wide-eyed-antelope.cyclic.app/auth'
  
         const { data: { token, userID, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
             username, password, fullName: form.fullName, phonenumber, avatarURL,
