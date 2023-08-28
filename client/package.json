@@ -3,16 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.1.2",
-    "concurrently": "^8.0.1",
+    "axios": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "stream-chat": "^7.2.0",
-    "stream-chat-react": "^10.3.0",
+    "stream-chat": "^8.11.0",
+    "stream-chat-react": "^10.9.0",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"
   },
@@ -41,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.3"
+    "@testing-library/jest-dom": "^5.17.0",
+    "sass": "^1.66.1"
   }
 }
